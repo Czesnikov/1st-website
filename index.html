@@ -1,15 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Moja Pierwsza Strona</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
-        h1 { color: #333; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>patrol114 — green perimeter</title>
+  <meta name="description" content="Patrol114 — PHP / Python, Linux, DevOps, bezpieczeństwo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Sukces! Moja strona na GitHub Pages działa!</h1>
-    <p>To jest moja pierwsza darmowa strona internetowa.</p>
+  <canvas id="triangleField" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top">patrol114@linux:~$_</a>
+    <nav>
+      <a href="#geneza">GENEZA</a>
+      <a href="#stack">STACK</a>
+      <a href="#realizacje">REALIZACJE</a>
+      <a href="#kontakt">KONTAKT</a>
+    </nav>
+    <div class="status"><span class="dot"></span> PERIMETER SECURE_</div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <div class="eyebrow">PERIMETER SECURE_</div>
+        <h1>Patryk Dąbrowski —<br><span>PHP / Python, Linux,</span><br>DevOps, bezpieczeństwo.</h1>
+        <p class="lead">Sprawdzam, zanim uwierzę. Nic nie wychodzi bez mojego „wyślij”.</p>
+        <a class="terminal-link" href="mailto:patrol114@gmail.com">patrol114@gmail.com <span>↗</span></a>
+      </div>
+
+      <div class="helix-wrap" aria-hidden="true">
+        <svg class="angular-helix" viewBox="0 0 500 760" role="img">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g class="helix" filter="url(#glow)">
+            <path class="strand strand-a" d="M125 20 L220 68 L350 120 L380 190 L315 260 L170 315 L120 385 L175 455 L325 510 L380 580 L330 650 L210 700 L120 745"/>
+            <path class="strand strand-b" d="M375 20 L280 68 L150 120 L120 190 L185 260 L330 315 L380 385 L325 455 L175 510 L120 580 L170 650 L290 700 L380 745"/>
+            <g class="rungs">
+              <path d="M125 20 L375 20"/><path d="M220 68 L280 68"/><path d="M350 120 L150 120"/>
+              <path d="M380 190 L120 190"/><path d="M315 260 L185 260"/><path d="M170 315 L330 315"/>
+              <path d="M120 385 L380 385"/><path d="M175 455 L325 455"/><path d="M325 510 L175 510"/>
+              <path d="M380 580 L120 580"/><path d="M330 650 L170 650"/><path d="M210 700 L290 700"/><path d="M120 745 L380 745"/>
+            </g>
+          </g>
+        </svg>
+        <div class="sync"><span>SYNCHRONIZATION</span><strong id="syncValue">000%</strong></div>
+      </div>
+
+      <div class="hero-footer">
+        <span>FPS <b id="fps">00</b></span>
+        <button data-action="logout">LOGOUT</button>
+        <button data-action="reboot">REBOOT</button>
+        <button data-action="exit">EXIT</button>
+        <span>NODES <b id="nodes">00</b></span>
+      </div>
+      <a class="scroll" href="#geneza">↓ scroll</a>
+    </section>
+
+    <section id="geneza" class="section content-section">
+      <div class="section-code">01 / GENEZA</div>
+      <div class="section-grid">
+        <div>
+          <h2>Zaczęło się od<br><span>jednego serwera.</span></h2>
+          <p class="sub">11 lat, piąta klasa podstawówki i pierwszy własny serwer. Reszta poszła stąd.</p>
+          <div class="command">./read-geneza.sh<span class="cursor">_</span></div>
+        </div>
+        <div class="copy">
+          <p>Komputery i programowanie to dla mnie coś więcej niż hobby — prawdziwa pasja, czasem też źródło niejednego bólu głowy.</p>
+          <p>Eksploruję zabezpieczenia systemów, siedzę w środowiskach Linuksa, na co dzień koduję w Pythonie i PHP, a przy okazji poznaję JavaScript, Lua, SQL i Solidity.</p>
+          <p>Wszystko zaczęło się, gdy miałem 11 lat. W piątej klasie podstawówki, zamiast grać, postanowiłem postawić własny serwer — „WakacyjneMU”. To był mój pierwszy kontakt z kodem i jego logika wciągnęła mnie na dobre.</p>
+          <p>W gimnazjum ruszyła sieć prywatnych serwerów GameDream Network — HurricaneOTS, GameDreamOTS i MuOnline — oraz top50.com.pl, ranking popularnych gier i stron MMORPG.</p>
+          <p>Na drugim roku technikum postawiłem na freelance — i tak zostało.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section content-section">
+      <div class="section-code">02 / STACK</div>
+      <h2>W czym <span>pracuję.</span></h2>
+      <div class="stack-layout">
+        <div class="stack-panel">
+          <div class="panel-title"># codzienny stack</div>
+          <div class="chips">
+            <span>Python</span><span>PHP</span><span>Linux</span><span>DevOps</span>
+            <span>Administrowanie systemami</span><span>MySQL</span><span>HTML</span>
+            <span>JavaScript</span><span>React</span><span>Next.js</span><span>Lua</span>
+            <span>SQL</span><span>Solidity</span>
+          </div>
+        </div>
+        <div class="stack-panel accent-panel">
+          <div class="panel-title"># codziennie dokładam coś nowego</div>
+          <div class="chips"><span>Fine-tuning</span><span>LoRA / QLoRA / PEFT</span><span>RAG / Embeddingi</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="realizacje" class="section content-section">
+      <div class="section-code">03 / REALIZACJE</div>
+      <h2>Rzeczy, które <span>postawiłem.</span></h2>
+      <div class="projects">
+        <article class="project featured">
+          <div class="project-number">00</div>
+          <div>
+            <h3>EV Parts UK</h3>
+            <a href="https://ev-parts.uk/" target="_blank" rel="noreferrer">ev-parts.uk →</a>
+            <p>Sklep WooCommerce dla części do aut elektrycznych — własna wtyczka synchronizująca aukcje z eBay, żeby katalog aktualizował się sam.</p>
+            <div class="tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>eBay API</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-number">01</div>
+          <div>
+            <h3>ZdrowaForma — bot Telegram</h3>
+            <p>Bot automatyzujący komunikację z klientami sklepu — zamówienia i powiadomienia bez ręcznego ogarniania każdej wiadomości.</p>
+            <div class="tags"><span>Python</span><span>Telegram Bot API</span><span>Automatyzacja</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-number">02</div>
+          <div>
+            <h3>Badania bezpieczeństwa mobilnego</h3>
+            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub →</a>
+            <p>Poradniki i narzędzia wokół zabezpieczeń Androida — od blokad FRP po szerszą analizę bezpieczeństwa urządzeń mobilnych.</p>
+            <div class="tags"><span>Android</span><span>Security Research</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-number">03</div>
+          <div>
+            <h3>AI, Python & Automation Guides</h3>
+            <a href="https://huggingface.co/" target="_blank" rel="noreferrer">Hugging Face →</a>
+            <p>Własne przewodniki i szablony do pracy z AI, Pythonem i automatyzacją, plus eksperymenty z agentami AI.</p>
+            <div class="tags"><span>Python</span><span>AI / LLM</span><span>Guides</span></div>
+          </div>
+        </article>
+      </div>
+      <blockquote>„Wszyscy wiedzą, że czegoś nie da się zrobić, i przychodzi ten jeden, który nie wie, że się nie da.”<cite>— Albert Einstein</cite></blockquote>
+    </section>
+
+    <section id="kontakt" class="section contact">
+      <div class="section-code">04 / KONTAKT</div>
+      <div class="contact-grid">
+        <div>
+          <h2>patrol114@linux:~$<br><span>contact --open</span></h2>
+          <p>Otwarty na nowe projekty.</p>
+          <a class="email" href="mailto:patrol114@gmail.com">patrol114@gmail.com</a>
+        </div>
+        <img src="https://patrol114.pl/avatar.jpg?v=1790118420" alt="" class="avatar">
+      </div>
+      <footer>© 2026 patrol114 <span>GREEN PERIMETER / ONLINE</span></footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
